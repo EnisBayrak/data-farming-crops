@@ -1,39 +1,28 @@
-"""
-Module: farming_diary
-This script simulates a farming diary where different crops (corn and rice) are grown, watered,
-and checked for ripeness.
-"""
-
 from farm.corn import Corn
+from farm.rice import Rice
+
+print("\n📝 Day One: Corn\n")
+
+# 1. Gün: Mısır ekme, sulama ve olgunlaşma kontrolü
+corn = Corn()
+print(f"Corn planted. Grains: {corn.grains}, Ripe: {corn.ripe()}")
+
+corn.water()
+print(f"Watered once. Grains: {corn.grains}, Ripe: {corn.ripe()}")
+
+corn.water()
+print(f"Watered twice. Grains: {corn.grains}, Ripe: {corn.ripe()}")
 
 
-print("\n\n📝 Day One: Corn")
+print("\n📝 Day Two: Rice\n")
 
-# 1. Instantiate a corn crop
-pass  # YOUR CODE HERE
+# 2. Gün: Pirinç ekme, fideleme (transplant), sulama ve kontrol
+rice = Rice()
+print(f"Rice planted. Grains: {rice.grains}, Ripe: {rice.ripe()}")
 
-# 2. Water the corn crop
-pass  # YOUR CODE HERE
+rice.transplant()
+print("Rice transplanted.")
 
-# 3. Print "The corn crop produced ## grains"
-pass  # YOUR CODE HERE
-
-# 4. Print "The corn crop is ripe" or "The corn crop is not ripe"
-pass  # YOUR CODE HERE
-
-print("\n\n📝 Day Two: Rice")
-
-# 1. Instantiate a rice crop
-pass  # YOUR CODE HERE
-
-# 2. Water the rice crop
-pass  # YOUR CODE HERE
-
-# 3. Transplant the rice crop
-pass  # YOUR CODE HERE
-
-# 4. Print "The rice crop produced ## grains"
-pass  # YOUR CODE HERE
-
-# 5. Print "The rice crop is ripe" or "The rice crop is not ripe"
-pass  # YOUR CODE HERE
+while not rice.ripe():
+    rice.water()
+    print(f"Watered rice. Grains: {rice.grains}, Ripe: {rice.ripe()}")
