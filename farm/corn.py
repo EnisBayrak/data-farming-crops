@@ -1,5 +1,5 @@
+from farm.crop import Crop
 
-class Corn:
-    # YOUR CODE HERE
-    pass
-
+class Corn(Crop):
+    def water(self):
+        self.grains += 10

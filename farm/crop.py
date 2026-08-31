@@ -1,5 +1,6 @@
-# pylint: disable=too-few-public-methods
-
-
 class Crop:
-    pass  # YOUR CODE HERE
+    def __init__(self):
+        self.grains = 0
+
+    def ripe(self):
+        return self.grains >= 15
